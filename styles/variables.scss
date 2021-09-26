@@ -1,0 +1,16 @@
+//Colors
+$primary_color: #ffdd00;
+$secondary_color: #5f16a8;
+$tertiary_color: #ff9e00;
+
+$radial_gradient_bottom: radial-gradient(
+  1000px 1000px at bottom,
+  $tertiary_color -20%,
+  $primary_color 70%
+);
+
+$radial_gradient_top: radial-gradient(
+  1000px 1000px at top,
+  $tertiary_color -20%,
+  $primary_color 70%
+);

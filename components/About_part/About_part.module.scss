@@ -1,0 +1,166 @@
+@import "../../styles/variables.scss";
+
+.about_part {
+  z-index: -100;
+  width: 100%;
+  height: fit-content;
+
+  display: grid;
+  justify-items: center;
+  align-items: center;
+
+  background-image: $radial_gradient_bottom;
+
+  .center {
+    position: relative;
+    z-index: 100;
+    width: 80%;
+    height: 100%;
+    padding-top: 25vh;
+    padding-bottom: 25vh;
+
+    display: grid;
+    place-items: center;
+
+    gap: 15vh;
+
+    grid-template-rows: 2fr 2fr 1.5fr;
+
+    .nameHeading {
+      align-self: flex-end;
+      width: fit-content;
+      height: fit-content;
+
+      display: grid;
+      align-items: center;
+
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 6fr 10fr;
+
+      .paragraph_div {
+        justify-self: flex-end;
+        width: 95%;
+        height: 90%;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+
+        p {
+          display: inline-block;
+          color: black;
+          padding-right: 5px;
+          font-size: clamp(3vmin, 3.5vmin, 5vmin);
+
+          &:nth-of-type(1) {
+            font-size: clamp(3vmin, 6vmin, 7vmin);
+          }
+        }
+      }
+
+      h2 {
+        color: $secondary_color;
+
+        &:nth-of-type(1) {
+          justify-self: flex-end;
+          font-size: clamp(5vmin, 14vmin, 20vmin);
+        }
+
+        &:nth-of-type(2) {
+          font-size: clamp(5vmin, 15vmin, 20vmin);
+          grid-column: 1/3;
+        }
+      }
+    }
+
+    .selfiePic {
+      position: absolute;
+      left: 0;
+      z-index: -100;
+      width: 50vmin;
+      height: auto;
+      opacity: 0.3;
+      filter: sepia();
+      transform: translate(25vw, -15vh) rotateZ(25deg);
+    }
+
+    .devHeading {
+      align-self: flex-end;
+      width: fit-content;
+      height: fit-content;
+
+      display: grid;
+      align-items: center;
+
+      grid-template-rows: 1fr 1.1fr;
+      grid-template-columns: 13fr 10fr;
+
+      div {
+        justify-self: flex-end;
+        width: 98%;
+        height: 90%;
+        display: grid;
+        grid-template-rows: 1fr 2.5fr;
+
+        p {
+          display: inline-block;
+          color: black;
+          padding-right: 5px;
+          height: fit-content;
+
+          &:nth-of-type(1) {
+            font-size: clamp(3vmin, 3.5vmin, 5vmin);
+          }
+
+          &:nth-of-type(2) {
+            font-size: clamp(3vmin, 6vmin, 7vmin);
+          }
+        }
+      }
+
+      h2 {
+        color: $secondary_color;
+
+        &:nth-of-type(1) {
+          justify-self: flex-end;
+          font-size: clamp(5vmin, 14vmin, 20vmin);
+        }
+
+        &:nth-of-type(2) {
+          align-self: flex-end;
+          font-size: clamp(5vmin, 13vmin, 20vmin);
+          grid-column: 1/3;
+          position: relative;
+
+          &::after {
+            position: absolute;
+            content: "HTML, CSS (SCSS), JS, React, Next.js, Three.js, GIT (Github)";
+            font-size: clamp(1vmin, 1.2vmin, 2vmin);
+            letter-spacing: 0.68vmin;
+            width: fit-content;
+            height: fit-content;
+            transform: translate(1vmin, -17vmin);
+          }
+        }
+      }
+    }
+
+    .noticeParagraph {
+      display: grid;
+      width: fit-content;
+      height: fit-content;
+      place-items: center;
+
+      div {
+        display: grid;
+        place-items: center;
+
+        p {
+          font-size: clamp(2vmin, 2.5vmin, 3vmin);
+
+          span {
+            color: $secondary_color;
+          }
+        }
+      }
+    }
+  }
+}

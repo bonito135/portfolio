@@ -1,0 +1,104 @@
+@import "../../styles/variables.scss";
+
+.work_part {
+  z-index: -100;
+  width: 100vw;
+  height: fit-content;
+
+  display: grid;
+  place-items: center;
+
+  background-image: $radial_gradient_top;
+
+  .center {
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    justify-items: center;
+    align-items: start;
+    gap: 15vh;
+
+    .project_block {
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-rows: 1fr 1fr;
+      background-color: transparent;
+
+      place-items: center;
+
+      height: 100%;
+
+      @media screen and (min-width: 768px) {
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .text_block {
+        justify-self: center;
+        width: 80%;
+        height: 100%;
+        background-color: white;
+        display: grid;
+        grid-template-rows: 0.4fr 1fr;
+        justify-items: center;
+        align-items: center;
+        background-color: transparent;
+
+        h4 {
+          align-self: end;
+          text-align: center;
+          font-size: clamp(1.4rem, 2rem, 3vw);
+        }
+
+        p {
+          height: fit-content;
+          text-align: center;
+          width: 35ch;
+          font-size: clamp(0.7rem, 2rem, 0.8vmax);
+        }
+      }
+
+      .preview_block {
+        position: relative;
+        width: fit-content;
+        height: 100%;
+        background-color: transparent;
+        display: grid;
+        place-items: center;
+
+        .image {
+          transform: translateY(2px);
+          filter: saturate(0);
+          opacity: 0.2;
+          width: min(500px, 70%);
+          height: auto;
+        }
+
+        .button_container {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          display: grid;
+          place-items: center;
+          z-index: 100;
+          pointer-events: none;
+
+          button {
+            width: 100px;
+            height: 50px;
+            background-color: transparent;
+            opacity: 1;
+            border: solid $secondary_color 3px;
+            border-radius: 30px;
+            color: $secondary_color;
+            letter-spacing: 2px;
+          }
+        }
+      }
+    }
+  }
+}

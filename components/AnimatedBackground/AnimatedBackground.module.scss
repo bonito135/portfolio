@@ -1,0 +1,40 @@
+@import "../../styles/variables.scss";
+
+.container {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+
+  display: grid;
+  place-items: center;
+
+  overflow-y: hidden;
+  overflow-x: hidden;
+
+  .animatingElement {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    place-items: center;
+    width: 50vmin;
+    height: 50vmin;
+    background: transparent;
+    border-width: 3px;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: $secondary_color;
+    scale: 1;
+    font-size: 1.2rem;
+    color: transparent;
+
+    .arrowToRight {
+      z-index: 100;
+      width: 15px;
+      height: 15px;
+      border: solid black;
+      border-color: transparent;
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      transform: rotate(-45deg);
+    }
+  }
+}

@@ -1,0 +1,18 @@
+@import "../../../styles/variables.scss";
+
+.mail_sent_alert {
+  position: relative;
+  background-color: #ffdd00d3;
+  height: 70vh;
+  width: 90vmin;
+
+  border-radius: 20px;
+
+  display: grid;
+  place-items: center;
+
+  h1 {
+    width: 90%;
+    word-wrap: break-word;
+  }
+}

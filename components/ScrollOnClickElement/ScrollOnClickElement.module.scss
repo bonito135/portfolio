@@ -1,0 +1,49 @@
+@import "../../styles/variables.scss";
+
+.scrollOnClickElement {
+  position: fixed;
+  top: 20vh;
+  right: 25vmax;
+  width: 120px;
+  height: 50px;
+  background: $secondary_color;
+
+  border-radius: 20px;
+
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  overflow: hidden;
+
+  .containerElement {
+    display: grid;
+    height: 150px;
+    width: 100%;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: 100%;
+    place-items: center;
+    overflow: hidden;
+
+    .sendAMessageText {
+      font-size: 0.7rem;
+      color: $primary_color;
+      white-space: nowrap;
+      transform: translateY(-1px);
+    }
+
+    .messageIcon {
+      transform: translateY(2px);
+    }
+
+    .arrowUp {
+      z-index: 100;
+      width: 15px;
+      height: 15px;
+      border: solid black;
+      border-color: $primary_color;
+      border-width: 3px 3px 0 0;
+      transform: translateY(4px) rotate(-45deg);
+    }
+  }
+}

@@ -1,0 +1,56 @@
+@import "../../styles/variables.scss";
+
+.home_part {
+  z-index: -100;
+  width: 100%;
+  height: max(600px, 100vh);
+
+  display: grid;
+  place-items: center;
+
+  background-image: $radial_gradient_bottom;
+
+  .center {
+    z-index: 100;
+    width: 80%;
+    height: fit-content;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+      text-align: center;
+      width: max-content;
+      font-size: max(2rem, 10vmin);
+
+      &:nth-of-type(1) {
+        transform: translateX(-20vmin);
+      }
+
+      &:nth-of-type(2) {
+        transform: translateX(-3vmin);
+      }
+
+      &:nth-of-type(3) {
+        transform: translateX(17vmin);
+
+        &::after {
+          content: "by Jakub Smetana";
+          font-size: max(0.5rem, 1.7vmin);
+
+          position: absolute;
+          width: fit-content;
+
+          bottom: 0;
+          transform: translate(min(-17vmin, -9.8vmax), 1.5vmin);
+        }
+      }
+    }
+  }
+
+  p {
+    display: none;
+  }
+}
