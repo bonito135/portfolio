@@ -7,6 +7,7 @@ import styles from "./Contact_part.module.scss";
 //images
 import whatsappIcon from "../../public/images/whatsappicon.png";
 import facebookIcon from "../../public/images/facebookicon.png";
+import githubIcon from "../../public/images/githubicon.png";
 
 // Components
 import MailSentAlert from "./MailSentAlert/MailSentAlert";
@@ -188,21 +189,33 @@ export default function Contact_part() {
           </button>
 
           <div className={styles.icons_block} id="iconsBlock">
-            <Image
-              width="40"
-              height="40"
-              className={styles.image}
-              alt="whatsappicon"
-              src={whatsappIcon}
-            />
+            <a
+              href="whatsapp://send?phone=420777991350"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Image
+                width="40"
+                height="40"
+                className={styles.image}
+                alt="whatsappicon"
+                src={whatsappIcon}
+              />
+            </a>
 
-            <Image
-              className={styles.image}
-              width="40"
-              height="40"
-              alt="facebookicon"
-              src={facebookIcon}
-            />
+            <a
+              href="https://github.com/bonito135"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Image
+                className={styles.image}
+                width="40"
+                height="40"
+                alt="githubicon"
+                src={githubIcon}
+              />
+            </a>
           </div>
         </form>
       )}
