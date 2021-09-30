@@ -22,37 +22,42 @@ export default function Contact_part() {
   const messageRef = useRef(null);
 
   const sendMail = async () => {
-    console.log(emailRef.current.value);
+    /* console.log(emailRef.current.value);
+    console.log(messageRef.current.value);
     console.log(
       emailRef.current.value.match(
         "[a-zA-Z0-9.-_]{1,}@[a-zA-Z0-9.-]{1,}[.]{1}[a-zA-Z0-9]{2,}"
       )
-    );
+    ); */
     if (
       emailRef.current.value.match(
         "[a-zA-Z0-9.-_]{1,}@[a-zA-Z0-9.-]{1,}[.]{1}[a-zA-Z0-9]{2,}"
-      ) != null
+      ) != null ||
+      undefined ||
+      ""
     ) {
-      const emailValue = emailRef.current.value;
-      const messageValue = messageRef.current.value;
+      if (messageRef.current.value !== "") {
+        const emailValue = emailRef.current.value;
+        const messageValue = messageRef.current.value;
 
-      const combinedValues = { email: emailValue, message: messageValue };
+        const combinedValues = { email: emailValue, message: messageValue };
 
-      const mailFetchOptions = {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(combinedValues),
-      };
+        const mailFetchOptions = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(combinedValues),
+        };
 
-      const response = await fetch("/api/sendMail", mailFetchOptions);
+        const response = await fetch("/api/sendMail", mailFetchOptions);
 
-      const parsedResponse = await response.json();
-      console.log(parsedResponse);
+        const parsedResponse = await response.json();
+        console.log(parsedResponse);
 
-      if (parsedResponse.emailSent) {
-        setMailWasSent(true);
+        if (parsedResponse.emailSent) {
+          setMailWasSent(true);
+        }
       }
     }
   };
