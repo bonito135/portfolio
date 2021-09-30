@@ -19,7 +19,6 @@ export default function handler(req, res) {
         user: "portfolioemailbot@gmail.com",
         pass: ".RandomPassWord.",
       },
-      secure: true,
     });
 
     const mailOptions = {
@@ -31,12 +30,15 @@ export default function handler(req, res) {
     };
 
     transporter.sendMail(mailOptions, function (err, info) {
-      if (err) console.log(err);
-      else console.log(info);
+      if (err) {
+        console.log(err);
+        res.send("error" + JSON.stringify(err));
+      } else {
+        console.log(info);
+        res.statusCode = 200;
+        res.write(JSON.stringify({ status: 200, emailSent: true }));
+        res.end();
+      }
     });
-
-    res.statusCode = 200;
-    res.write(JSON.stringify({ status: 200, emailSent: true }));
-    res.end();
   }
 }
