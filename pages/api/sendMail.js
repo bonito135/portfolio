@@ -10,7 +10,7 @@ export default async function handler(req, res) {
     const email = req.body.email;
     const message = req.body.message;
 
-    const emailBotPassword = ".RandomPassWord.";
+    const emailBotPassword = process.env.EMAIL_BOT;
 
     const transporter = nodemailer.createTransport({
       port: 465,
