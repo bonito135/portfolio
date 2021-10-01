@@ -17,7 +17,7 @@ export default async function handler(req, res) {
       host: "smtp.gmail.com",
       auth: {
         user: "portfolioemailbot@gmail.com",
-        pass: ".RandomPassWord.", //emailBotPassword,
+        pass: emailBotPassword, //emailBotPassword,
       },
     });
 
