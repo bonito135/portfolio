@@ -34,7 +34,6 @@ export default function handler(req, res) {
         console.log(err);
         res.send("error" + JSON.stringify(err));
       } else {
-        console.log(info);
         res.statusCode = 200;
         res.write(JSON.stringify({ status: 200, emailSent: true }));
         res.end();
