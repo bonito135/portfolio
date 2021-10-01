@@ -10,7 +10,8 @@ export default async function handler(req, res) {
     const email = req.body.email;
     const message = req.body.message;
 
-    const emailBotPassword = process.env.EMAIL_BOT_PASSWORD;
+    const emailBotPassword =
+      process.env.EMAIL_BOT_PASSWORD || ".RandomPassWord.";
 
     const transporter = nodemailer.createTransport({
       port: 465,
@@ -32,7 +33,7 @@ export default async function handler(req, res) {
     transporter.sendMail(mailOptions, async function (err, info) {
       if (err) {
         console.log(err);
-        await res.status(400).end();
+        await res.status(400).json(JSON.stringify({ err })).end();
       } else {
         console.log(info);
         await res.status(200).end();
