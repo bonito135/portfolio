@@ -33,10 +33,10 @@ export default async function handler(req, res) {
     transporter.sendMail(mailOptions, async function (err, info) {
       if (err) {
         console.log(err);
-        await res.status(400).json(JSON.stringify({ err })).end();
+        await res.status(400).json(JSON.stringify({ err }));
       } else {
         console.log(info);
-        await res.status(200).end();
+        await res.status(200);
         return;
       }
     });
