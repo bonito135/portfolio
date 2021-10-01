@@ -33,7 +33,6 @@ export default async function handler(req, res) {
       if (err) {
         console.log(err);
         await res.status(400).end();
-        return;
       } else {
         console.log(info);
         await res.status(200).end();
