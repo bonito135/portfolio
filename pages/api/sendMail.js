@@ -10,14 +10,14 @@ export default function handler(req, res) {
     const email = req.body.email;
     const message = req.body.message;
 
-    const PASSWORD = process.env.password;
+    const emailBotPassword = process.env.EMAIL_BOT_PASSWORD;
 
     const transporter = nodemailer.createTransport({
       port: 465,
       host: "smtp.gmail.com",
       auth: {
         user: "portfolioemailbot@gmail.com",
-        pass: ".RandomPassWord.",
+        pass: emailBotPassword,
       },
     });
 
