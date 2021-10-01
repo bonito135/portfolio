@@ -29,14 +29,13 @@ export default async function handler(req, res) {
       html: `<div>${message}</div>`, // html body
     };
 
-    transporter.sendMail(mailOptions, async function (err, info) {
+    transporter.sendMail(mailOptions, function (err, info) {
       if (err) {
         console.log(err);
-        await res.status(400).json(JSON.stringify({ err }));
+        res.status(400).json(JSON.stringify({ err }));
       } else {
         console.log(info);
-        await res.status(200);
-        return;
+        res.status(200).json(JSON.stringify({ info }));
       }
     });
   }
