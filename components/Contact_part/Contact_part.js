@@ -50,11 +50,9 @@ export default function Contact_part() {
         };
 
         const response = await fetch("/api/sendMail", mailFetchOptions);
+        console.log(response);
 
-        const parsedResponse = await response.json();
-        console.log(parsedResponse);
-
-        if (parsedResponse.emailSent) {
+        if (response.status === 200) {
           setMailWasSent(true);
         }
       }

@@ -17,7 +17,7 @@ export default async function handler(req, res) {
       host: "smtp.gmail.com",
       auth: {
         user: "portfolioemailbot@gmail.com",
-        pass: emailBotPassword,
+        pass: ".RandomPassWord.", //emailBotPassword,
       },
     });
 
@@ -32,11 +32,11 @@ export default async function handler(req, res) {
     transporter.sendMail(mailOptions, async function (err, info) {
       if (err) {
         console.log(err);
-        await res.send("error" + JSON.stringify(err));
+        await res.status(400).end();
+        return;
       } else {
-        res.statusCode = 200;
-        await res.write(JSON.stringify({ status: 200, emailSent: true }));
-        await res.end();
+        await res.status(200).end();
+        return;
       }
     });
   }
