@@ -6,7 +6,6 @@ import styles from "./Contact_part.module.scss";
 
 //images
 import whatsappIcon from "../../public/images/whatsappicon.png";
-import facebookIcon from "../../public/images/facebookicon.png";
 import githubIcon from "../../public/images/githubicon.png";
 
 // Components
@@ -67,7 +66,7 @@ export default function Contact_part() {
       return <MailSentAlert />;
     }
 
-    return null;
+    return;
   };
 
   const setInitialAnimationState = () => {

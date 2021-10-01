@@ -1,4 +1,4 @@
-export default function handler(req, res) {
+export default async function handler(req, res) {
   const nodemailer = require("nodemailer");
 
   if (req.method != "POST") {
@@ -29,14 +29,14 @@ export default function handler(req, res) {
       html: `<div>${message}</div>`, // html body
     };
 
-    transporter.sendMail(mailOptions, function (err, info) {
+    transporter.sendMail(mailOptions, async function (err, info) {
       if (err) {
         console.log(err);
-        res.send("error" + JSON.stringify(err));
+        await res.send("error" + JSON.stringify(err));
       } else {
         res.statusCode = 200;
-        res.write(JSON.stringify({ status: 200, emailSent: true }));
-        res.end();
+        await res.write(JSON.stringify({ status: 200, emailSent: true }));
+        await res.end();
       }
     });
   }
